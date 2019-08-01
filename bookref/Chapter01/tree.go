@@ -25,7 +25,7 @@ func (tree *Tree) insert(m int) {
 				tree.RightNode = &Tree{nil, m, nil}
 			} else {
 
-				if tree.LeftNode != nil {
+				 	if tree.LeftNode != nil {
 
 					tree.LeftNode.insert(m)
 				} else {
@@ -46,10 +46,10 @@ func (tree *Tree) insert(m int) {
 func print(tree *Tree) {
 	if tree != nil {
 
-		fmt.Println(" Value", tree.Value)
-		fmt.Printf("Tree Node Left")
+		fmt.Printf("Tree Node Left\n")
 		print(tree.LeftNode)
-		fmt.Printf("Tree Node Right")
+		fmt.Println(" Value", tree.Value)
+		fmt.Printf("Tree Node Right\n")
 		print(tree.RightNode)
 	} else {
 		fmt.Printf("Nil\n")
@@ -59,12 +59,20 @@ func print(tree *Tree) {
 // main method
 func main() {
 	var tree *Tree = &Tree{nil, 1, nil}
-	print(tree)
+	//print(tree)
 	tree.insert(3)
-	print(tree)
+	//print(tree)
 	tree.insert(5)
+	//print(tree)
+	tree.insert(7)
+	//print(tree)
+	tree.insert(10)
+	//print(tree)
+	tree.insert(11)
+	//print(tree)
+	tree.insert(12)
 	print(tree)
-	tree.LeftNode.insert(7)
-	print(tree)
+
+
 
 }
