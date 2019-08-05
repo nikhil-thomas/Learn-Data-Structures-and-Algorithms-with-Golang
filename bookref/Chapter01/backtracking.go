@@ -13,7 +13,7 @@ func findElementsWithSum(arr [10]int, combinations [19]int, size int, k int, add
 	var num int = 0
 
 	if addValue > k {
-		return -1
+		return 0
 	}
 
 	if addValue == k {
@@ -24,15 +24,20 @@ func findElementsWithSum(arr [10]int, combinations [19]int, size int, k int, add
 			fmt.Printf("%d,", arr[combinations[p]])
 		}
 		fmt.Println(" ")
+		fmt.Println("m", m, "l", l)
+		//time.Sleep(200 * time.Millisecond)
 	}
-
+num
+num
+num
+num
 	var i int
 	for i = l; i < size; i++ {
 
 		//fmt.Println(" m", m)
 		combinations[m] = l
 
-		findElementsWithSum(arr, combinations, size, k, addValue+arr[i], l, m+1)
+		num += findElementsWithSum(arr, combinations, size, k, addValue+arr[i], l, m+1)
 		l = l + 1
 	}
 	return num
@@ -47,12 +52,13 @@ func main() {
 
 	var combinations [19]int
 
-	findElementsWithSum(arr, combinations, 10, addedSum, 0, 0, 0)
+	count := findElementsWithSum(arr, combinations, 10, addedSum, 0, 0, 0)
 
 	//fmt.Println(check)
 
 	//var check2 bool = findElement(arr,9)
 
 	//fmt.Println(check2)
+	fmt.Println(count)
 
 }
